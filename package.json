@@ -1,0 +1,19 @@
+{
+  "name": "3dio-modifiers-app",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://modifiers.3d.io",
+  "repository": "archilogic-com/3dio-modifiers-app",
+  "license": "MIT",
+  "author": {
+    "name": "archilogic",
+    "email": "dev.rocks@archilogic.com",
+    "url": "https://archilogic.com"
+  },
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
