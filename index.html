@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title> 3d.io modifiers for 3d models and 3d.io furniture</title>
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="3d, aframe, webgl, webvr, archilogic, 3d.io, interior, 3d furniture, 3d modifier, 3d style">
+    <meta name="description" content="xxx">
+  
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+    <link rel="stylesheet" href="style.css">
+  
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://3d.io/releases/3dio-js/1.x.x-beta/3dio.min.js"></script>
+    <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/v0.1.12/dist/aframe-orbit-controls-component.min.js"></script>
+  </head>
+
+  <body>
+    <div id="original model view">
+      <!-- original model -->
+    </div>
+    
+    <div id="modified model view">
+      <p style="padding-bottom: 1em;">
+        <!--<a id="back-button">&lt; back</a>-->
+        <span style="float:right;">
+        <a href="https://3d.io/docs/api/1/" target="_blank">Docs</a> |
+        <a href="https://github.com/archilogic-com/3dio-modifiers-app" target="_blank">Github</a> |
+        <a href="https://stackoverflow.com/questions/tagged/3d.io%20or%20archilogic" target="_blank">Stack Overflow</a> |
+        <a href="https://3d.io" target="_blank">3d.io</a>
+        </span>
+      </p>
+      
+      <p style="clear: right;">
+      <div id="preview">
+        <a-scene embedded antialias="true">
+          <a-entity id="furniture"
+                    io3d-furniture="id:a2d91985-6d60-43ef-b660-0d6ed370bb6f"
+                    position="0 0 0"
+          ></a-entity>
+          <a-sky color="#ececec"></a-sky>
+          <a-entity geometry="primitive: circle; radius: 2"
+                    material="color: #999;"
+                    position="0 0 0"
+                    rotation="-90 0 0"
+          ></a-entity>
+          <a-entity id="camera-target"
+                    position="0 0.5 0"
+          ></a-entity>
+          <a-entity camera="fov: 55;"
+                    position="1.7 0.8 0"
+                    orbit-controls="target:#camera-target; autoRotate: true;"
+          ></a-entity>
+        </a-scene>
+        <div id="preview-loading-overlay">LOADING ...</div>
+      </div>
+      </p>
+      
+    </div>
+  
+  </body>
+
+</html>
