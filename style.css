@@ -27,7 +27,7 @@ a {
 
 /* CONTENT ON THE LEFT SIDE */
 
-#library {
+#original-view {
     position: absolute;
     top: 0; left: 0; bottom: 0;
     width: 60%;
@@ -36,7 +36,7 @@ a {
     background: white;
 }
 
-#library #search  {
+#original-view #search  {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
@@ -46,7 +46,7 @@ a {
     box-shadow: 0 0 20px 10px rgba(255,255,255,1);
 }
 
-#library #search input {
+#original-view #search input {
     width: 100%;
     height: 100%;
     line-height: 100%;
@@ -60,7 +60,7 @@ a {
     background-position: left center;
 }
 
-#library #results {
+#original-view #results {
     position: absolute;
     left: 0; top: 4.5em;
     bottom: 0;
@@ -71,7 +71,7 @@ a {
     flex-flow: row wrap;
 }
 
-#library .furniture-item {
+#original-view .furniture-item {
     margin-right: 1em;
     margin-bottom: 1em;
     min-width: 120px;
@@ -85,7 +85,7 @@ a {
     margin: 0 auto 0 auto;
 }
 
-#library .furniture-item .image {
+#original-view .furniture-item .image {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
@@ -98,11 +98,11 @@ a {
     opacity: 1;
 }
 
-#library .furniture-item .overlay:hover .image {
+#original-view .furniture-item .overlay:hover .image {
     opacity: 0.7;
 }
 
-#library .furniture-item .overlay {
+#original-view .furniture-item .overlay {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -113,22 +113,22 @@ a {
     background: rgba(255,255,255,0.7);
 }
 
-#library .furniture-item .overlay:hover {
+#original-view .furniture-item .overlay:hover {
     border: 3px solid black;
 }
 
-#library .furniture-item .overlay .info-top, #library .furniture-item .overlay .info-bottom {
+#original-view .furniture-item .overlay .info-top, #library .furniture-item .overlay .info-bottom {
     background: rgba(255,255,255,0.7);
     z-index: 11;
     opacity: 0;
     transition: opacity 200ms ease-out;
 }
 
-#library .furniture-item .overlay:hover .info-top, #library .furniture-item .overlay:hover .info-bottom {
+#original-view .furniture-item .overlay:hover .info-top, #library .furniture-item .overlay:hover .info-bottom {
     opacity: 1;
 }
 
-#library .furniture-item .info-top {
+#original-view .furniture-item .info-top {
     position: absolute;
     top: 0;
     width: 100%;
@@ -136,7 +136,7 @@ a {
     color: black;
 }
 
-#library .furniture-item .info-bottom {
+#original-view .furniture-item .info-bottom {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -144,11 +144,11 @@ a {
     color: black;
 }
 
-#library .furniture-item .name {
+#original-view .furniture-item .name {
     font-weight: bold;
 }
 
-#library .furniture-item .manufacturer {
+#original-view .furniture-item .manufacturer {
     font-weight: 200;
 }
 
@@ -171,7 +171,7 @@ a {
     z-index: 10;
 }
 
-#details {
+#modified-view {
     position: absolute;
     top: 0; right: 0; bottom: 0;
     width: 40%;
@@ -181,29 +181,29 @@ a {
     z-index: 0;
 }
 
-#details #back-button {
+#modified-view #back-button {
     display: none;
     float: left;
     cursor: pointer;
 }
 
-#details p {
+#modified-view p {
     margin: 1.5em 0 1.5em 0;
 }
 
-#details pre,code {
+#modified-view pre,code {
     margin: 0;
     font-size: 12px;
     padding: 0.2em;
 }
 
-#details #preview {
+#modified-view #preview {
     position: relative;
     width: 100%;
     height: 300px;
 }
 
-#details #preview-loading-overlay {
+#modified-view #preview-loading-overlay {
     background-color: rgba(0,0,0,0.5);
     color: white;
     text-align: center;
@@ -216,14 +216,14 @@ a {
     height: 100%;
 }
 
-#details #furniture-id {
+#modified-view #furniture-id {
     width: auto;
     padding: 0.3em;
     background: #eee;
     border-bottom: 1px solid black;
 }
 
-#details #jsfiddle-button {
+#modified-view #jsfiddle-button {
     padding: 0.3em 0.6em;
     border: 1px solid gray;
     background: #eee;
@@ -235,7 +235,7 @@ a {
     padding-left: 2.3em;
 }
 
-#details #codepen-button {
+#modified-view #codepen-button {
     padding: 0.3em 0.6em;
     border: 1px solid gray;
     background: #eee;
@@ -252,10 +252,10 @@ a {
     #intro {
         display: none;
     }
-    #details {
+    #modified-view {
         width: 100%;
     }
-    #details #back-button {
+    #modified-view #back-button {
         display: block;
     }
 }

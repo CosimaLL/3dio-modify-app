@@ -17,3 +17,4 @@ function hideElement (elem) {
 
 hideElement(previewLoadingOverlay)
 hideElement(backButton)
+
