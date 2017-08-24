@@ -10,7 +10,6 @@ io3d.fish.modify = function modify (options) {
         method: 'modify',
         params: {
             inputFileKey: '535e624259ee6b0200000484/170818-1159-hwaumn/archilogic_2017-08-18_11-59-29_5kPrUk.gz.data3d.buffer',
-            outputDirectory: '535e624259ee6b0200000484/170824-madlaina-test-' + Date.now(),
             options: {
                 modifiers: options
             }
