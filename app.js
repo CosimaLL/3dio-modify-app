@@ -1,10 +1,8 @@
 // Element references
 
-var originalView = document.querySelector('#original-view')
-var modifiedView = document.querySelector('#modified-view')
-
-var preview = document.querySelector('#preview')
+var outputModel = document.querySelector('#output-model')
 var previewLoadingOverlay = document.querySelector('#preview-loading-overlay')
+
 
 function updateModifiedView () {
 
@@ -14,6 +12,9 @@ function hideElement (elem) {
   elem.style.display = 'none'
 }
 
+function updateData3dView (entity, key) {
+    entity.setAttribute('io3d-data3d', 'key:'+ key)
+}
 
 function main () {
     //hideElement(previewLoadingOverlay)
@@ -22,7 +23,9 @@ function main () {
     }).then(function () {
         return io3d.fish.modify()
     }).then(function onApiResponse (result) {
-        console.log(result)
+        updateData3dView(outputModel, result)
+    }).catch(function onFailure(err) {
+        console.log('Modify failed: ', err)
     })
 }
 

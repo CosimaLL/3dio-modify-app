@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <div id="overview-panel">
+    <section id="overview-panel">
       <!-- left view -->
       <div id="title">
         <h2>3d.io</h2>
@@ -26,29 +26,48 @@
       </div>
       <div id="settings">
         <h2>modifier</h2>
-        <div class="dropdown">
-          origami
-        </div>
+        <select id="modifier">
+          <option value="origami">Origami</option>
+          <option value="consolidateFaceSides">Recalculate face normals</option>
+        </select>
         <h2>settings</h2>
       </div>
       <div id="about">
         <h2>about</h2>
       </div>
+    </section>
 
-    </div>
-
-    <div id="input-panel">
+    <section id="input-panel">
       <!-- original model | middle view -->
-    </div>
+    </section>
 
-    <div id="output-panel">
+    <section id="output-panel">
       <!-- modified model | right view -->
 
       <div id="preview">
-        <a-scene></a-scene>
+        <a-scene embedded antialias="true">
+          <a-entity id="output-model"
+                    io3d-data3d="key:/535e624259ee6b0200000484/170818-1308-zq7z2o/victim.gz.data3d.buffer"
+                    position="0 0 0"
+          ></a-entity>
+          <a-sky color="#ececec"></a-sky>
+          <a-entity geometry="primitive: circle; radius: 2"
+                    material="color: #999;"
+                    position="0 0 0"
+                    rotation="-90 0 0"
+          ></a-entity>
+          <a-entity id="camera-target"
+                    position="0 0.5 0"
+          ></a-entity>
+          <a-entity camera="fov: 55;"
+                    position="1.7 0.8 0"
+                    orbit-controls="target:#camera-target; autoRotate: true;"
+          ></a-entity>
+        </a-scene>
+        <!--<div id="preview-loading-overlay">LOADING ...</div> -->
       </div>
 
-<!--      <p style="padding-bottom: 1em;">
+      <!-- <p style="padding-bottom: 1em;">
         <span style="float:right;">
         <a href="https://3d.io/docs/api/1/" target="_blank">Docs</a> |
         <a href="https://github.com/archilogic-com/3dio-modifiers-app" target="_blank">Github</a> |
@@ -56,33 +75,8 @@
         <a href="https://3d.io" target="_blank">3d.io</a>
         </span>
       </p>
-      
-      <p style="clear: right;">
-        <div id="preview">
-          <a-scene embedded antialias="true">
-            <a-entity id="modified-model"
-                      io3d-data3d="key:/535e624259ee6b0200000484/170818-1308-zq7z2o/victim.gz.data3d.buffer"
-                      position="0 0 0"
-            ></a-entity>
-            <a-sky color="#ececec"></a-sky>
-            <a-entity geometry="primitive: circle; radius: 2"
-                      material="color: #999;"
-                      position="0 0 0"
-                      rotation="-90 0 0"
-            ></a-entity>
-            <a-entity id="camera-target"
-                      position="0 0.5 0"
-            ></a-entity>
-            <a-entity camera="fov: 55;"
-                      position="1.7 0.8 0"
-                      orbit-controls="target:#camera-target; autoRotate: true;"
-            ></a-entity>
-          </a-scene>
-          <div id="preview-loading-overlay">LOADING ...</div>
-        </div>
-      </p>-->
-      
-    </div>
+      -->
+    </section>
 
     <script src="app.js"></script>
 
