@@ -3,7 +3,6 @@
 var originalView = document.querySelector('#original-view')
 var modifiedView = document.querySelector('#modified-view')
 
-var backButton = document.querySelector('#back-button')
 var preview = document.querySelector('#preview')
 var previewLoadingOverlay = document.querySelector('#preview-loading-overlay')
 
@@ -15,6 +14,16 @@ function hideElement (elem) {
   elem.style.display = 'none'
 }
 
-hideElement(previewLoadingOverlay)
-hideElement(backButton)
 
+function main () {
+    //hideElement(previewLoadingOverlay)
+    io3d.utils.auth.getSession().then(function (result) {
+        if (!result.isAuthenticated) return io3d.utils.ui.login()
+    }).then(function () {
+        return io3d.fish.modify()
+    }).then(function onApiResponse (result) {
+        console.log(result)
+    })
+}
+
+main()
