@@ -13,17 +13,42 @@
   
     <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
     <script src="https://3d.io/releases/3dio-js/1.x.x-beta/3dio.min.js"></script>
+    <script src="3d-io-extension.js"></script>
     <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/v0.1.12/dist/aframe-orbit-controls-component.min.js"></script>
   </head>
 
   <body>
-    <div id="original-view">
-      <!-- original model | left view -->
+    <div id="overview-panel">
+      <!-- left view -->
+      <div id="title">
+        <h2>3d.io</h2>
+        <h1>modify 3d data</h1>
+      </div>
+      <div id="settings">
+        <h2>modifier</h2>
+        <div class="dropdown">
+          origami
+        </div>
+        <h2>settings</h2>
+      </div>
+      <div id="about">
+        <h2>about</h2>
+      </div>
+
     </div>
-    
-    <div id="modified-view">
-      <p style="padding-bottom: 1em;">
-        <a id="back-button">&lt; back</a>
+
+    <div id="input-panel">
+      <!-- original model | middle view -->
+    </div>
+
+    <div id="output-panel">
+      <!-- modified model | right view -->
+
+      <div id="preview">
+        <a-scene></a-scene>
+      </div>
+
+<!--      <p style="padding-bottom: 1em;">
         <span style="float:right;">
         <a href="https://3d.io/docs/api/1/" target="_blank">Docs</a> |
         <a href="https://github.com/archilogic-com/3dio-modifiers-app" target="_blank">Github</a> |
@@ -55,13 +80,12 @@
           </a-scene>
           <div id="preview-loading-overlay">LOADING ...</div>
         </div>
-      </p>
+      </p>-->
       
     </div>
-    
+
     <script src="app.js"></script>
-  
-  
+
   </body>
 
 </html>
