@@ -16,6 +16,13 @@ function updateData3dView (entity, key) {
     entity.setAttribute('io3d-data3d', 'key:'+ key)
 }
 
+function getKeyFromId (id) {
+    io3d.furniture.get(id).then(function (result) {
+      // Fixme get KEY from URL
+      return result.info.data3dUrl
+    })
+}
+
 function main () {
     //hideElement(previewLoadingOverlay)
     io3d.utils.auth.getSession().then(function (result) {

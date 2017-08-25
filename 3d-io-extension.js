@@ -48,7 +48,14 @@ function pollStatus (fileKey) {
   })
 }
 
-// helper - 3dio internals
+// Helper
+
+// storage.get new helper function
+function convertUrlToKey (url) {
+
+}
+
+// 3dio internals unchanged
 
 function poll(callback, options) {
 
