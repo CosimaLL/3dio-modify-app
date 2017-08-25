@@ -21,20 +21,23 @@ body {
     display: flex;
 }
 
-a {
-    color: blue;
+.preview {
+    position: relative;
+    width: 100%;
+    height: 33vh;
+    background-color:darkslategrey;
 }
 
 #overview-panel, #input-panel, #output-panel {
     display: inline-block;
     height: 100vh;
-    background-color: slategray;
+    background-color: white;
+    padding: 1em 1em 1em 1em;
     flex: 1 1 33vw;
 }
 
 /* CONTENT ON THE LEFT SIDE - overview-panel */
 #overview-panel {
-    background: gold;
     min-width: 15em;
 }
 
@@ -43,13 +46,13 @@ a {
 }
 
 /* CONTENT IN THE MIDDLE - input-panel */
-#input-panel {
-    background: violet;
+#input-panel #furniture-id input {
+    padding: 0.25em 0 0 0.25em;
+    width: 60%;
+    border-bottom: 1px solid black;
 }
 
 /* CONTENT ON THE RIGHT SIDE - output-panel */
-#output-panel #preview {
-    position: relative;
-    width: 100%;
-    height: 300px;
+#output-panel {
+
 }

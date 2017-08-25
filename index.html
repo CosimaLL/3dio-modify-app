@@ -39,12 +39,24 @@
 
     <section id="input-panel">
       <!-- original model | middle view -->
+      <div class="preview">
+      </div>
+      
+      <div id="furniture-id">
+        <span> Furniture ID: </span>
+        <input type="text" list="furniture-dropdown" maxlength="36">
+        <datalist id="furniture-dropdown">
+          <option value="ef62bf88-97e9-4468-ad0e-a87ced83578d">Vitra: Lounge Chair</option>
+          <option value="943357e8-911f-4bb5-8b89-8281385ef08f">B&B Italia: Husk Chair</option>
+        </datalist>
+      </div>
+      
     </section>
 
     <section id="output-panel">
       <!-- modified model | right view -->
 
-      <div id="preview">
+      <div class="preview">
         <a-scene embedded antialias="true">
           <a-entity id="output-model"
                     io3d-data3d="key:/535e624259ee6b0200000484/170818-1308-zq7z2o/victim.gz.data3d.buffer"
