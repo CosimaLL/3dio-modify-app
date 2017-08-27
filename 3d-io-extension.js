@@ -2,26 +2,28 @@
 
 io3d.fish = io3d.model || {}
 
-io3d.fish.modify = function modify (options) {
-    var defaultOptions = ['origami']
-    var options = options || defaultOptions
+io3d.fish.modify = function modify (key, options) {
+  var defaultOptions = { modifiers: ['origami'] }
+  var options = options || defaultOptions
+  var params = {
+    inputFileKey: key,
+    options: {}
+  }
 
-    return io3d.utils.services.call('Processing.task.enqueue', {
-        method: 'modify',
-        params: {
-            inputFileKey: '535e624259ee6b0200000484/170818-1159-hwaumn/archilogic_2017-08-18_11-59-29_5kPrUk.gz.data3d.buffer',
-            options: {
-                modifiers: options
-            }
-        }
-    }).then(function (statusFileKey) {
-      return pollStatus(statusFileKey)
-    })
+  if (options.modifiers) {
+    params.options.modifiers = options.modifiers
+  }
+
+  return io3d.utils.services.call('Processing.task.enqueue', {
+      method: 'modify',
+      params: params
+  }).then(function (statusFileKey) {
+    return pollStatus(statusFileKey)
+  })
 }
 
 // internals
 function pollStatus (fileKey) {
-  console.log(fileKey)
   return poll(function onPoll(onSuccess, onError, next) {
     /*
     1. Read status file content
@@ -52,7 +54,7 @@ function pollStatus (fileKey) {
 
 // storage.get new helper function
 function convertUrlToKey (url) {
-
+  // Fixme get KEY from URL
 }
 
 // 3dio internals unchanged
