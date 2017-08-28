@@ -50,18 +50,20 @@
           <option value="943357e8-911f-4bb5-8b89-8281385ef08f">B&B Italia: Husk Chair</option>
         </datalist>
       </div>
-      
     </section>
 
     <section id="output-panel">
       <!-- modified model | right view -->
-
       <div class="preview">
         <a-scene embedded antialias="true">
+          <a-entity id="input-model"
+                    io3d-furniture="id:70f66aef-e805-445e-aabe-07c3f39c77bd"
+                    position="-1 0 0"
+                    ></a-entity>
           <a-entity id="output-model"
                     io3d-data3d="key:/535e624259ee6b0200000484/170818-1308-zq7z2o/victim.gz.data3d.buffer"
-                    position="0 0 0"
-          ></a-entity>
+                    position="1 0 0"
+                    ></a-entity>
           <a-sky color="#ececec"></a-sky>
           <a-entity geometry="primitive: circle; radius: 2"
                     material="color: #999;"

@@ -33,7 +33,6 @@ function pollStatus (fileKey) {
      */
     io3d.storage.get(fileKey, {type: "json", cdn: false}).then(function checkContent(content) {
       if (content && content.params) {
-        console.log(content.params)
         switch(content.params.status) {
             case 'SUCCESS':
               onSuccess(content.params.data)
