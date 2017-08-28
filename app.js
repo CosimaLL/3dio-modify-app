@@ -42,39 +42,39 @@ function debounce(wait, immediate, func) {
   };
 }
 
-
-
-// listeners
-furnitureId.addEventListener('input', debounce(1000, false, function updateView () {
+function furnitureIdChanged() {
   furnitureId.style.backgroundColor = null
-
   if (furnitureId.value.length === 0) {
+    // No input
     return
   }
-
   io3d.furniture.getInfo(furnitureId.value).then(function (info){
+    // Update input view
     updateFurnitureView(inputModel, furnitureId.value)
+    // Modify 3d model and update output view
+    getKeyFromId(furnitureId.value)
+      .then(function (key) {
+        return io3d.fish.modify(key)
+      }).then(function onApiResponse (result) {
+        updateData3dView(outputModel, result)
+      }).catch(function onFailure(err) {
+        console.log('Modify failed: ', err)
+      })
   }).catch(function onFailure (err) {
     furnitureId.style.backgroundColor = "#FF9800"
     console.log(err)
   })
+}
 
-}))
+// listeners
+furnitureId.addEventListener('input', debounce(1000, false, furnitureIdChanged))
+furnitureId.addEventListener('click', furnitureId.select)
 
 // main
 function main () {
   //hideElement(previewLoadingOverlay)
-
   io3d.utils.auth.getSession().then(function (result) {
       if (!result.isAuthenticated) return io3d.utils.ui.login()
-  }).then(function getData3dKey() {
-      return getKeyFromId(furnitureId.value)
-  }).then(function modify(key){
-      return io3d.fish.modify(key)
-  }).then(function onApiResponse (result) {
-      updateData3dView(outputModel, result)
-  }).catch(function onFailure(err) {
-      console.log('Modify failed: ', err)
   })
 }
 
