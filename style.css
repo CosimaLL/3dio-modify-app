@@ -16,6 +16,24 @@
     box-sizing: border-box;
 }
 
+h1 {
+    font-size: 175%;
+    font-weight:bold;
+}
+
+h2 {
+    font-size: 125%;
+}
+
+h3 {
+    font-size: 100%;
+}
+
+p {
+    font-size: 80%;
+    padding: 1em 6em 1em 1em;
+}
+
 body {
     font-family: "Fira Sans", Helvetica, Arial, sans-serif;
     display: flex;
@@ -39,6 +57,7 @@ body {
 /* CONTENT ON THE LEFT SIDE - overview-panel */
 #overview-panel {
     min-width: 15em;
+    background-color:#fcf7f0;
 }
 
 #overview-panel div {
