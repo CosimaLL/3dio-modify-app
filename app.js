@@ -4,6 +4,7 @@ var inputModel = document.querySelector('#input-model')
 var outputModel = document.querySelector('#output-model')
 var previewLoadingOverlay = document.querySelector('#preview-loading-overlay')
 var furnitureId = document.querySelector('#furniture-id')
+var modifierId = document.querySelector('#modifier-id')
 
 //helpers
 
@@ -44,31 +45,50 @@ function debounce(wait, immediate, func) {
 
 function furnitureIdChanged() {
   furnitureId.style.backgroundColor = null
-  if (furnitureId.value.length === 0) {
-    // No input
-    return
-  }
-  io3d.furniture.getInfo(furnitureId.value).then(function (info){
-    // Update input view
-    updateFurnitureView(inputModel, furnitureId.value)
-    // Modify 3d model and update output view
-    getKeyFromId(furnitureId.value)
-      .then(function (key) {
-        return io3d.fish.modify(key)
-      }).then(function onApiResponse (result) {
-        updateData3dView(outputModel, result)
-      }).catch(function onFailure(err) {
-        console.log('Modify failed: ', err)
-      })
-  }).catch(function onFailure (err) {
+  sendModifyRequest().catch(function onFailure (err) {
     furnitureId.style.backgroundColor = "#FF9800"
     console.log(err)
   })
 }
 
+function sendModifyRequest() {
+  // Furniture ID empty
+  if (furnitureId.value.length === 0) {
+    return Promise.reject('No furniture ID provided')
+  }
+  // Verify furniture ID
+  return io3d.furniture.getInfo(furnitureId.value).then(function (info){
+    // Update input view
+    updateFurnitureView(inputModel, furnitureId.value)
+    // Modify 3d model and update output view
+    getKeyFromId(furnitureId.value)
+        .then(function (key) {
+          return io3d.fish.modify(key, getModifyOptions())
+        }).then(function onApiResponse (result) {
+      updateData3dView(outputModel, result)
+    }).catch(function onFailure(err) {
+      console.log('Modify failed: ', err)
+    })
+  })
+}
+
+function getModifyOptions() {
+  var options = {}
+  if (modifierId.value) {
+    console.log(modifierId.value)
+    options.modifiers = [modifierId.value]
+  }
+  return options
+}
+
 // listeners
 furnitureId.addEventListener('input', debounce(1000, false, furnitureIdChanged))
 furnitureId.addEventListener('click', furnitureId.select)
+modifierId.addEventListener('input', function () {
+  sendModifyRequest().catch(function (err) {
+    console.log('Modify failed: ', err)
+  })
+})
 
 // main
 function main () {

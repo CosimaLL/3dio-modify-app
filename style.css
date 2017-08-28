@@ -23,6 +23,7 @@ h1 {
 
 h2 {
     font-size: 125%;
+    padding-bottom: 0.5em;
 }
 
 h3 {
@@ -30,8 +31,7 @@ h3 {
 }
 
 p {
-    font-size: 80%;
-    padding: 1em 6em 1em 1em;
+    font-size: 100%;
 }
 
 body {
@@ -40,9 +40,8 @@ body {
 }
 
 .preview {
-    position: relative;
     width: 100%;
-    height: 33vh;
+    height: 100%;
     background-color:darkslategrey;
 }
 
@@ -54,14 +53,20 @@ body {
     flex: 1 1 33vw;
 }
 
+#overview-panel div, #input-panel div, #output-panel div {
+    height: 29vh;
+    margin-bottom: 2em;
+}
+
 /* CONTENT ON THE LEFT SIDE - overview-panel */
 #overview-panel {
     min-width: 15em;
     background-color:#fcf7f0;
 }
 
-#overview-panel div {
-    height:33vh;
+#overview-panel p {
+    font-size: 80%;
+    padding: 0.5em 6em 0 1em;
 }
 
 /* CONTENT IN THE MIDDLE - input-panel */
@@ -73,5 +78,10 @@ body {
 
 /* CONTENT ON THE RIGHT SIDE - output-panel */
 #output-panel {
-
 }
+
+
+
+/* FIXME
+    Change sizes so that there is no scrollbar
+*/

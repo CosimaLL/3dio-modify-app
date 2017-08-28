@@ -4,14 +4,15 @@ io3d.fish = io3d.model || {}
 
 io3d.fish.modify = function modify (key, options) {
   var defaultOptions = { modifiers: ['origami'] }
-  var options = options || defaultOptions
+  var apiOptions = options || defaultOptions
+
   var params = {
     inputFileKey: key,
     options: {}
   }
 
-  if (options.modifiers) {
-    params.options.modifiers = options.modifiers
+  if (apiOptions.modifiers) {
+    params.options.modifiers = apiOptions.modifiers
   }
 
   return io3d.utils.services.call('Processing.task.enqueue', {

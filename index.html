@@ -21,15 +21,14 @@
     <section id="overview-panel">
       <!-- left view -->
       <div id="title">
-        <h2>3d.io</h2>
+        <h3>3d.io</h3>
         <h1>modify 3d data</h1>
       </div>
       <div id="settings">
         <h2>Settings</h2>
-        <h3>Modifier</h3>
-        <select id="modifier">
+        <select id="modifier-id">
           <option value="origami">Origami</option>
-          <option value="consolidateFaceSides">Recalculate face normals</option>
+          <option value="consolidate_face_sides">Recalculate face normals</option>
         </select>
       </div>
       <div id="about">
@@ -40,8 +39,7 @@
 
     <section id="input-panel">
       <!-- original model | middle view -->
-      <div class="preview">
-      </div>
+      <div class="preview"></div>
       
       <div id="furniture-dropdown">
         <span> Furniture ID: </span>
@@ -86,10 +84,14 @@
         <!--<div id="preview-loading-overlay">LOADING ...</div> -->
       </div>
 
+      <div id="tab-box">
+        <p>Use the following snippet with <a href="https://aframe.io">A-Frame</a>:</p>
+      </div>
+
       <!-- <p style="padding-bottom: 1em;">
         <span style="float:right;">
         <a href="https://3d.io/docs/api/1/" target="_blank">Docs</a> |
-        <a href="https://github.com/archilogic-com/3dio-modifiers-app" target="_blank">Github</a> |
+        <a href="https://github.com/archilogic-com/3dio-modify-app" target="_blank">Github</a> |
         <a href="https://stackoverflow.com/questions/tagged/3d.io%20or%20archilogic" target="_blank">Stack Overflow</a> |
         <a href="https://3d.io" target="_blank">3d.io</a>
         </span>
