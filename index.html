@@ -36,18 +36,33 @@
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
       </div>
     </section>
-
     <section id="input-panel">
       <!-- original model | middle view -->
       <div class="preview"></div>
-      
+
       <div id="furniture-dropdown">
-        <span> Furniture ID: </span>
+        <span> Choose a furniture ID: </span>
         <input id="furniture-id" type="text" list="dropdown-list" value="" maxlength="36">
         <datalist id="dropdown-list">
           <option value="ef62bf88-97e9-4468-ad0e-a87ced83578d">Vitra: Lounge Chair</option>
           <option value="943357e8-911f-4bb5-8b89-8281385ef08f">B&B Italia: Husk Chair</option>
         </datalist>
+      </div>
+
+      <div class="code-aframe">
+        <p>Or input your <a href="https://aframe.io">A-Frame</a> code:
+        <pre><code id="code-snippet-aframe" class="language-markup">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="https://aframe.io/releases/0.6.1/aframe.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://3d.io/releases/3dio-js/1.x.x-beta/3dio.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene antialias="true"&gt;
+      &lt;a-entity io3d-furniture="id:bc8f1f66-6fd6-4907-9a3f-24f13d1eadf2" position="0 0 0"&gt;&lt;/a-entity&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </p>
       </div>
     </section>
 
@@ -83,9 +98,22 @@
         </a-scene>
         <!--<div id="preview-loading-overlay">LOADING ...</div> -->
       </div>
+      <div class="place-holder"></div>
 
-      <div id="tab-box">
-        <p>Use the following snippet with <a href="https://aframe.io">A-Frame</a>:</p>
+      <div class="code-aframe">
+        <p>Use the following snippet with <a href="https://aframe.io">A-Frame</a>:
+        <pre><code id="code-snippet-aframe" class="language-markup">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="https://aframe.io/releases/0.6.1/aframe.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://3d.io/releases/3dio-js/1.x.x-beta/3dio.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene antialias="true"&gt;
+      &lt;a-entity io3d-data3d="key:/535e624259ee6b0200000484/170818-1308-zq7z2o/victim.gz.data3d.buffer" position="0 0 0"&gt;&lt;/a-entity&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </p>
       </div>
 
       <!-- <p style="padding-bottom: 1em;">
@@ -98,6 +126,8 @@
       </p>
       -->
     </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
 
     <script src="app.js"></script>
 

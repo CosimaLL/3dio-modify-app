@@ -22,12 +22,12 @@ h1 {
 }
 
 h2 {
-    font-size: 125%;
+    font-size: 130%;
     padding-bottom: 0.5em;
 }
 
 h3 {
-    font-size: 100%;
+    font-size: 125%;
 }
 
 p {
@@ -39,22 +39,17 @@ body {
     display: flex;
 }
 
-.preview {
-    width: 100%;
-    height: 100%;
-    background-color:darkslategrey;
-}
-
 #overview-panel, #input-panel, #output-panel {
     display: inline-block;
     height: 100vh;
+    width:33vw;
     background-color: white;
     padding: 1em 1em 1em 1em;
     flex: 1 1 33vw;
 }
 
 #overview-panel div, #input-panel div, #output-panel div {
-    height: 29vh;
+    width:100%;
     margin-bottom: 2em;
 }
 
@@ -62,6 +57,10 @@ body {
 #overview-panel {
     min-width: 15em;
     background-color:#fcf7f0;
+}
+
+#overview-panel div {
+    height: 29vh;
 }
 
 #overview-panel p {
@@ -77,10 +76,27 @@ body {
 }
 
 /* CONTENT ON THE RIGHT SIDE - output-panel */
-#output-panel {
+
+/* CONTENT MIDDLE AND RIGHT*/
+#input-panel pre, #output-panel pre {
+    margin:0;
+    font-size:12px;
+    padding:0.2em;
 }
 
+#input-panel p, #output-panel p {
+    margin: 1.5em 0 1.5em 0;
+}
 
+.preview {
+    width: 100%;
+    height: 30vh;
+    background-color:darkslategrey;
+}
+
+.place-holder {
+    display: inline-block;
+}
 
 /* FIXME
     Change sizes so that there is no scrollbar
