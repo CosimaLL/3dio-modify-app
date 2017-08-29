@@ -6,6 +6,9 @@ var previewLoadingOverlay = document.querySelector('#preview-loading-overlay')
 var furnitureId = document.querySelector('#furniture-id')
 var modifierId = document.querySelector('#modifier-id')
 
+var inputSnippetAframe = document.querySelector('#input-snippet-aframe')
+var outputSnippetAframe = document.querySelector('#output-snippet-aframe')
+
 //helpers
 
 function hideElement (elem) {
@@ -45,6 +48,7 @@ function debounce(wait, immediate, func) {
 
 function furnitureIdChanged() {
   furnitureId.style.backgroundColor = null
+  if(furnitureId.value.length !== 0) inputSnippetAframe.innerHTML = inputSnippetAframe.innerHTML.replace(/id:([^"'<]+)/gmi, 'id:'+furnitureId.value)
   sendModifyRequest().catch(function onFailure (err) {
     furnitureId.style.backgroundColor = "#FF9800"
     console.log(err)
@@ -66,6 +70,7 @@ function sendModifyRequest() {
           return io3d.fish.modify(key, getModifyOptions())
         }).then(function onApiResponse (result) {
       updateData3dView(outputModel, result)
+      outputSnippetAframe.innerHTML = outputSnippetAframe.innerHTML.replace(/key:([^"'<]+)/gmi, 'key:/'+result)
     }).catch(function onFailure(err) {
       console.log('Modify failed: ', err)
     })
@@ -75,7 +80,6 @@ function sendModifyRequest() {
 function getModifyOptions() {
   var options = {}
   if (modifierId.value) {
-    console.log(modifierId.value)
     options.modifiers = [modifierId.value]
   }
   return options
