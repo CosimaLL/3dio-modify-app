@@ -55,6 +55,7 @@ Here are a few noteworthy settings:
   * You may want to override the cache timing with the "Object Caching" setting set to "Customize". TTLs are in seconds.
   * To help keeping the overview, enter the domain name (e.g. "modify.3d.io") as the comment
   * **Once the distribution is created**, click "Edit" in the "General" tab and enter the domain name (e.g. "modify.3d.io") into the "Alternate Domain Names" field.
+  * **Once the distribution is created**, click "Edit" in the "Origins" tab and select "HTTPS only" as the Origin Protocol Policy
 * Route53
   * Select the "3d.io" Zone
   * Use "Create Record Set" to add a new record of type "A" with the desired subdomain (e.g. enter "modify")
