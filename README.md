@@ -83,7 +83,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Madlaina Kalunder** - *Design, Code* - [tomas-polach](https://github.com/orgs/archilogic-com/people/tomas-polach)
+* **Madlaina Kalunder** - *Design, Code* - [aadjou](https://github.com/orgs/archilogic-com/people/aadjou)
 * **Martin Splitt** - *Docs* - [avgp](https://github.com/avgp)
 See also the list of [contributors](https://github.com/archilogic-com/3dio-modify-app/contributors) who participated in this project.
 
