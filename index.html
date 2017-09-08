@@ -75,7 +75,7 @@
     &lt;script src="https://3d.io/releases/3dio-js/1.x.x-beta/3dio.min.js"&gt;&lt;/script&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;a-scene antialias="true"&gt;
+    &lt;a-scene&gt;
       &lt;a-entity io3d-furniture="id:bc8f1f66-6fd6-4907-9a3f-24f13d1eadf2" position="0 0 0"&gt;&lt;/a-entity&gt;
     &lt;/a-scene&gt;
   &lt;/body&gt;
@@ -126,7 +126,7 @@
     &lt;script src="https://3d.io/releases/3dio-js/1.x.x-beta/3dio.min.js"&gt;&lt;/script&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;a-scene antialias="true"&gt;
+    &lt;a-scene&gt;
       &lt;a-entity io3d-data3d="key:/535e624259ee6b0200000484/170818-1308-zq7z2o/victim.gz.data3d.buffer" position="0 0 0"&gt;&lt;/a-entity&gt;
     &lt;/a-scene&gt;
   &lt;/body&gt;
@@ -149,24 +149,25 @@
 
     <script src="app.js"></script>
 
-     <!-- page analytics -->
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-46441340-2', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <!-- Hubspot analytics -->  
- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2805374.js"></script>
-  
-</body>
+    <!-- page analytics -->
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-46441340-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- Hubspot analytics -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2805374.js"></script>
+
+  </body>
 </html>
