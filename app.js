@@ -5,7 +5,7 @@ var outputModel = document.querySelector('#output-model')
 var previewLoadingOverlay = document.querySelector('#preview-loading-overlay')
 var furnitureId = document.querySelector('#furniture-id')
 var modifierId = document.querySelector('#modifier-id')
-
+var clearInput = document.querySelector('#clear-input')
 var inputSnippetAframe = document.querySelector('#input-snippet-aframe')
 var outputSnippetAframe = document.querySelector('#output-snippet-aframe')
 
@@ -88,6 +88,9 @@ function getModifyOptions() {
 // listeners
 furnitureId.addEventListener('input', debounce(1000, false, furnitureIdChanged))
 furnitureId.addEventListener('click', furnitureId.select)
+clearInput.addEventListener('click', function () {
+  furnitureId.value = ""
+})
 modifierId.addEventListener('input', function () {
   sendModifyRequest().catch(function (err) {
     console.log('Modify failed: ', err)
