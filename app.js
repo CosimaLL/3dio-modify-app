@@ -48,11 +48,20 @@ function debounce(wait, immediate, func) {
 
 function furnitureIdChanged() {
   furnitureId.style.backgroundColor = null
-  if(furnitureId.value.length !== 0) inputSnippetAframe.innerHTML = inputSnippetAframe.innerHTML.replace(/id:([^"'<]+)/gmi, 'id:'+furnitureId.value)
+  if(furnitureId.value.length !== 0) {
+    inputSnippetAframe.innerHTML = inputSnippetAframe.innerHTML.replace(/id:([^"'<]+)/gmi, 'id:'+furnitureId.value)
+    window.location.hash = 'furnitureId='+furnitureId.value
+  }
   sendModifyRequest().catch(function onFailure (err) {
     furnitureId.style.backgroundColor = "#FF9800"
     console.log(err)
   })
+}
+
+function getFurnitureIdFromUrl() {
+  var hash = window.location.hash
+  // furnitureId=
+  return (hash && hash !== '' && hash !== '#') ? hash.substring(13) : undefined
 }
 
 function sendModifyRequest() {
@@ -103,6 +112,12 @@ function main () {
   io3d.utils.auth.getSession().then(function (result) {
       if (!result.isAuthenticated) return io3d.utils.ui.login()
   })
+
+  var hash = getFurnitureIdFromUrl()
+  if (hash) {
+    furnitureId.value = hash
+    furnitureIdChanged()
+  }
 }
 
 main()
