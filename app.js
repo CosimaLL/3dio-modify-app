@@ -67,7 +67,7 @@ function sendModifyRequest() {
     // Modify 3d model and update output view
     getKeyFromId(furnitureId.value)
         .then(function (key) {
-          return io3d.fish.modify(key, getModifyOptions())
+          return io3d.modify(key, getModifyOptions())
         }).then(function onApiResponse (result) {
       updateData3dView(outputModel, result)
       outputSnippetAframe.innerHTML = outputSnippetAframe.innerHTML.replace(/key:([^"'<]+)/gmi, 'key:/'+result)

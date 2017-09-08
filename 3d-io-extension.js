@@ -1,8 +1,6 @@
 // extend io3d.js library until "io3d." is ready
 
-io3d.fish = io3d.model || {}
-
-io3d.fish.modify = function modify (key, options) {
+io3d.modify = function modify (key, options) {
   var defaultOptions = { modifiers: ['origami'] }
   var apiOptions = options || defaultOptions
 
